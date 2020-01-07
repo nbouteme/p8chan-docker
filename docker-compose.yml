@@ -1,0 +1,11 @@
+version: '3'
+services:
+    mongo:
+        container_name: mongo
+        image: "mongo:4.0-xenial"
+    web:
+        build: .
+        ports:
+            - "1234:1234"
+        links:
+            - mongo
